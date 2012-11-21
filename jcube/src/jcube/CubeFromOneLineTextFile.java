@@ -25,7 +25,7 @@ public class CubeFromOneLineTextFile {
 		assertEquals("blabla", this.cube.titreFace(0));	
 	}
 	
-	
+
 	
 
 }
