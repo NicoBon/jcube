@@ -20,13 +20,4 @@ public class CubeEqualityTest {
 		Cube cubeSVN = (new Cube()).addFace("SVN");
 		assertFalse(cubeGit.equals(cubeSVN));
 	}
-	
-	@Test
-	public void comparerUnXMLEtUnCube() throws XPathExpressionException, SAXException, IOException, ParserConfigurationException, TransformerFactoryConfigurationError, TransformerException{
-		Cube cube = Cube.fromTextFile("templates/template-cube2.txt");
-		XMLDocument xml = cube.toSVG("templates/cube.svg");
-		
-		XMLDocument  readCubeSVG = (new XMLDocument()).loadXMLString(xml.asXMLString());
-		assertTrue(readCubeSVG.match("//tspan[contains(text(), \"Comment sortir du cours plus tot\")]"));
-	}
 }

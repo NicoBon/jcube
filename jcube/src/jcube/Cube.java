@@ -15,11 +15,12 @@ import org.xml.sax.SAXException;
 public class Cube {
 	private String faceOne;
 	
-
 	public static Cube fromTextFile(String filepath) throws IOException {
 		Cube cube = new Cube();
 		return cube.loadFromFile(filepath);
 	}
+
+	
 
 	private Cube loadFromFile(String filePath) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)));
