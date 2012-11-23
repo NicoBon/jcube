@@ -35,5 +35,4 @@ public class CubeFromOneLineTextFile {
 		//XMLDocument  readCubeSVG = (new XMLDocument()).loadXMLString(xml.asXMLString());
 		assertTrue(xml.match("//tspan[contains(text(), \"Comment sortir du cours plus tot\")]"));
 	}
-	
 }

@@ -20,4 +20,12 @@ public class CubeEqualityTest {
 		Cube cubeSVN = (new Cube()).addFace("SVN");
 		assertFalse(cubeGit.equals(cubeSVN));
 	}
+	
+	@Test
+	public void cubeShouldBeTwoFaces(){
+		Cube cubeGit = (new Cube()).addFace("Git").addFace("bob");
+		Cube cubeSVN = (new Cube()).addFace("SVN").addFace("bill");
+		assertFalse(cubeGit.equals(cubeSVN));
+	}
+	
 }
