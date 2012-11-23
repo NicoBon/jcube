@@ -5,8 +5,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 public class Cube {
 	private String faceOne;
+	
 
 	public static Cube fromTextFile(String filepath) throws IOException {
 		Cube cube = new Cube();
@@ -20,7 +22,6 @@ public class Cube {
 		return this;
 	}
 
-
 	public Cube addFace(String string) {
 		this.faceOne = string;
 		return this;
@@ -30,5 +31,4 @@ public class Cube {
 		Cube otherCube = (Cube)other;
 		return this.faceOne.equals(otherCube.faceOne);
 	}
-
 }
