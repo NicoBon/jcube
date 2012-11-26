@@ -25,6 +25,6 @@ public class CubeEqualityTest {
 	public void cubeShouldBeOneFaceWithOneTitleAndOneContent(){
 		Cube unCube = (new Cube()).addFace("titre1" ,"contunu1");
 		Cube unCube2 = (new Cube()).addFace("titre2" ,"contunu2");
-		assertFalse(unCube.getUneFace().equals(unCube2.getUneFace()));
+		assertFalse(unCube.equals(unCube2));
 	}
 }
