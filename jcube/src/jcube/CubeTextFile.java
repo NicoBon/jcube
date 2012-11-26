@@ -19,4 +19,5 @@ public class CubeTextFile {
 		reader.close();
 		return cube;
 	}
+	
 }
