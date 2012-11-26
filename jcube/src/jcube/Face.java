@@ -5,15 +5,8 @@ public class Face {
 	private String contenu;
 	
 
-	public void setTitre(String titre) {
+	public Face(String titre, String contenue) {
 		this.titre = titre;
+		this.contenu = contenue;
 	}
-	
-	public Object getContenu() {
-		return contenu;
-	}
-	public void setContenu(String contenu) {
-		this.contenu = contenu;
-	}
-
 }
