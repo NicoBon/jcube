@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-/*public class CubeFromTwoLineTextFile {
+public class CubeFromTwoLineTextFile {
 	private Cube actualCube;
 	
 	@Test
@@ -14,7 +14,7 @@ import org.junit.Test;
 		this.actualCube = Cube.fromTextFile("templates/two-line-cube.txt");
 		Cube expectedCube = (new Cube())
 				.addFace("copier", "ctrl+c");	
-		assertEquals(expectedCube, actualCube);
+		assertEquals(actualCube.equals(expectedCube));
 	}
 
-}*/
+}

@@ -25,7 +25,7 @@ public class CubeFromOneLineTextFile {
 	@Test
 	public void cubeShouldBeOneFaceWithCommentSortirDuCoursPlusTot() throws IOException {
 		Cube expectedCube = (new Cube())
-				.addFace("Comment sortir du cours plus tot");
+				.addFace("Comment sortir du cours plus tot", "");
 		assertFalse(expectedCube.getUneFace().equals(actualCube.getUneFace()));	
 	}
 	
