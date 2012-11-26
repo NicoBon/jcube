@@ -1,8 +1,6 @@
 package jcube;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,7 +11,7 @@ import org.xml.sax.SAXException;
 
 
 public class Cube {
-	private String faceOne;
+	private Face uneFace = new Face();
 	
 	public static Cube fromTextFile(String filepath) throws IOException {
 		return (new CubeTextFile(filepath)).newCube();		
@@ -22,14 +20,22 @@ public class Cube {
 	}
 	
 
-	public Cube addFace(String string) {
-		this.faceOne = string;
+	public Face getUneFace() {
+		return uneFace;
+	}
+	public void setUneFace(Face uneFace) {
+		this.uneFace = uneFace;
+	}
+
+
+	public Cube addFace(String titre) {
+		this.uneFace.setContenu(titre);
 		return this;
 	}
 	
 	public boolean equals(Object other) {
 		Cube otherCube = (Cube)other;
-		return this.faceOne.equals(otherCube.faceOne);
+		return this.uneFace.equals(otherCube.uneFace);
 	}
 
 	public XMLDocument toSVG(String string) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException {
@@ -37,6 +43,13 @@ public class Cube {
 		Element blocNode = cubeSVG.getFirstNodeFromXPath("//tspan[contains(text(), \"$BLOCK1\")]");
 		blocNode.setTextContent("Comment sortir du cours plus tot");
 		return cubeSVG;
+	}
+
+
+	public Cube addFace(String titre, String contenue) {
+		this.uneFace.setContenu(contenue);
+		this.uneFace.setTitre(titre);
+		return this;
 	}
 	
 }

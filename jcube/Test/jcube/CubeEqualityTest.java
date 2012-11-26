@@ -2,15 +2,8 @@ package jcube;
 
 import static org.junit.Assert.*;
 
-import java.io.IOException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactoryConfigurationError;
-import javax.xml.xpath.XPathExpressionException;
 
 import org.junit.Test;
-import org.xml.sax.SAXException;
 
 public class CubeEqualityTest {
 
@@ -28,4 +21,10 @@ public class CubeEqualityTest {
 		assertFalse(cubeGit.equals(cubeSVN));
 	}
 	
+	@Test
+	public void cubeShouldBeOneFaceWithOneTitleAndOneContent(){
+		Cube unCube = (new Cube()).addFace("titre1" ,"contunu1");
+		Cube unCube2 = (new Cube()).addFace("titre2" ,"contunu2");
+		assertFalse(unCube.getUneFace().equals(unCube2.getUneFace()));
+	}
 }
