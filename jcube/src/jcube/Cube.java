@@ -19,12 +19,14 @@ public class Cube {
 		//return cube.loadFromFile(filepath);
 	}
 	
+
 	public Face getUneFace() {
 		return uneFace;
 	}
 	public void setUneFace(Face uneFace) {
 		this.uneFace = uneFace;
 	}
+
 
 	public Cube addFace(String titre) {
 		this.uneFace = new Face(titre,"");

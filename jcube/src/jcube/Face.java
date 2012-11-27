@@ -8,9 +8,5 @@ public class Face {
 	public Face(String titre, String contenue) {
 		this.titre = titre;
 		this.contenu = contenue;
-		}
-
 	}
-	
-
-
+}
