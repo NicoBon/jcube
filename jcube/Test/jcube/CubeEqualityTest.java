@@ -23,8 +23,8 @@ public class CubeEqualityTest {
 	
 	@Test
 	public void cubeShouldBeOneFaceWithOneTitleAndOneContent(){
-		Cube unCube = (new Cube()).addFace("titre1" ,"contunu1");
-		Cube unCube2 = (new Cube()).addFace("titre2" ,"contunu2");
+		Cube unCube = (new Cube()).addFace("titre1" ,"contenue1");
+		Cube unCube2 = (new Cube()).addFace("titre2" ,"contenue2");
 		assertFalse(unCube.equals(unCube2));
 	}
 }

@@ -12,9 +12,8 @@ public class CubeFromTwoLineTextFile {
 	@Test
 	public void cubeShouldBeOneFaceWithCommentSortirDuCoursPlusTot() throws IOException {
 		this.actualCube = Cube.fromTextFile("templates/two-line-cube.txt");
-		Cube expectedCube = (new Cube())
-				.addFace("copier", "ctrl+c");	
-		assertEquals(actualCube.equals(expectedCube));
+		Cube expectedCube = (new Cube()).addFace("copier", "ctrl+c");	
+		assertEquals(actualCube.getUneFace(),(expectedCube.getUneFace()));
 	}
 
 }

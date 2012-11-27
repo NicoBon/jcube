@@ -13,9 +13,18 @@ public class CubeTextFile {
 	}
 	
 	public Cube newCube() throws IOException{
-		Cube cube = new Cube();
+		Cube cube = new Cube();		
 		BufferedReader reader = new BufferedReader(new FileReader(new File(filepath)));
-		cube.addFace(reader.readLine().substring(2));
+		
+		String ligne1 = reader.readLine().substring(2);
+		String ligne2Test = reader.readLine();
+		String ligne2;
+		
+		if(ligne2Test==null)
+			ligne2 = "";
+		else ligne2=ligne2Test.substring(3);		
+		
+		cube.addFace(ligne1, ligne2);
 		reader.close();
 		return cube;
 	}

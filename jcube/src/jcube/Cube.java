@@ -18,15 +18,12 @@ public class Cube {
 		//Cube cube = new Cube();
 		//return cube.loadFromFile(filepath);
 	}
-	
-
 	public Face getUneFace() {
 		return uneFace;
 	}
 	public void setUneFace(Face uneFace) {
 		this.uneFace = uneFace;
 	}
-
 
 	public Cube addFace(String titre) {
 		this.uneFace = new Face(titre,"");
@@ -47,7 +44,7 @@ public class Cube {
 
 
 	public Cube addFace(String titre, String contenue) {
-		this.uneFace =new Face("titre", "contenue");
+		this.uneFace =new Face(titre, contenue);
 		return this;
 	}
 	
