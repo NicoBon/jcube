@@ -25,7 +25,7 @@ public class Cube {
 		this.uneFace = uneFace;
 	}
 
-	public Cube addFace(String titre) {
+	public Cube addFace(String titre) {		
 		this.uneFace = new Face(titre, "", "");
 		return this;
 	}

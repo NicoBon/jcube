@@ -30,8 +30,7 @@ import org.xml.sax.SAXException;
 public class XMLDocument {
 	private Document doc;
 
-	public XMLDocument loadXMLString(String xml) throws SAXException,
-			IOException, ParserConfigurationException {
+	public XMLDocument loadXMLString(String xml) throws SAXException,IOException, ParserConfigurationException {
 		this.doc = this.newDocumentBuilder().parse(
 				new InputSource(new StringReader(xml)));
 		return this;

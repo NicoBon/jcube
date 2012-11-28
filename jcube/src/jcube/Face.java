@@ -10,7 +10,6 @@ public class Face {
 		this.contenue = contenue;
 		this.cheat = cheat;
 	}
-
 	public boolean equals(Object other) {
 		Face otherFace = (Face) other;
 		return this.titre.equals(otherFace.titre)
