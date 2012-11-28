@@ -2,35 +2,37 @@ package jcube;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
+import org.junit.Before;
 import org.junit.Test;
 
 public class CubeEqualityTest {
+	private Cube cube1, cube2;
 
+	@Before
+	public void createCube() throws IOException{
+		this.cube1 = (new Cube()).addFace("Git", "", "");
+		this.cube2 = (new Cube()).addFace("SVN", "", "");
+	}
+	
 	@Test
 	public void twoCubeWithOneDifferentFaceShouldNotBeEqual() {
-		Cube cubeGit = (new Cube()).addFace("Git");
-		Cube cubeSVN = (new Cube()).addFace("SVN");
-		assertFalse(cubeGit.equals(cubeSVN));
+		assertFalse(this.cube1.equals(this.cube2));
 	}
 
 	@Test
 	public void cubeShouldBeTwoFaces() {
-		Cube cubeGit = (new Cube()).addFace("Git").addFace("bob");
-		Cube cubeSVN = (new Cube()).addFace("SVN").addFace("bill");
-		assertFalse(cubeGit.equals(cubeSVN));
+		assertFalse(this.cube1.addFace("bob", "", "").equals(this.cube2.addFace("bill", "", "")));
 	}
 
 	@Test
 	public void cubeShouldBeOneFaceWithOneTitleAndOneContent() {
-		Cube unCube = (new Cube()).addFace("titre1", "contenue1");
-		Cube unCube2 = (new Cube()).addFace("titre2", "contenue2");
-		assertFalse(unCube.equals(unCube2));
+		assertFalse(this.cube1.addFace("titre1", "contenue1", "").equals(this.cube2.addFace("titre2", "contenue2", "")));
 	}
 
 	@Test
-	public void cubeShouldBeOneFaceWithOneTitleAndOneContentAndOneCheat() {
-		Cube unCube = (new Cube()).addFace("titre1", "contenue1", "cheat1");
-		Cube unCube2 = (new Cube()).addFace("titre2", "contenue2", "cheat2");
-		assertFalse(unCube.equals(unCube2));
+	public void cubeShouldBeOneFaceWithOneTitleAndOneContentAndOneCheat() {		
+		assertFalse(this.cube1.addFace("titre1", "contenue1", "cheat1").equals(this.cube2.addFace("titre2", "contenue2", "cheat2")));
 	}
 }

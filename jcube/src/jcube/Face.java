@@ -1,9 +1,7 @@
 package jcube;
 
 public class Face {
-	private String titre;
-	private String contenue;
-	private String cheat;
+	private String titre, contenue, cheat;
 
 	public Face(String titre, String contenue, String cheat) {
 		this.titre = titre;

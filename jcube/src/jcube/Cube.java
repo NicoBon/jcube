@@ -15,11 +15,6 @@ public class Cube {
 		return (new CubeTextFile(filepath)).newCube();
 	}
 
-	public Cube addFace(String titre) {
-		this.uneFace = new Face(titre, "", "");
-		return this;
-	}
-
 	public boolean equals(Object other) {
 		Cube otherCube = (Cube) other;
 		return this.uneFace.equals(otherCube.uneFace);
@@ -30,11 +25,6 @@ public class Cube {
 		Element blocNode = cubeSVG.getFirstNodeFromXPath("//tspan[contains(text(), \"$BLOCK1\")]");
 		blocNode.setTextContent("Comment sortir du cours plus tot");
 		return cubeSVG;
-	}
-
-	public Cube addFace(String titre, String contenue) {
-		this.uneFace = new Face(titre, contenue, "");
-		return this;
 	}
 
 	public Cube addFace(String titre, String contenue, String cheat) {

@@ -14,8 +14,7 @@ public class CubeTextFile {
 
 	public Cube newCube() throws IOException {
 		Cube cube = new Cube();
-		BufferedReader reader = new BufferedReader(new FileReader(new File(
-				filepath)));
+		BufferedReader reader = new BufferedReader(new FileReader(new File(filepath)));
 
 		String ligne1 = reader.readLine().substring(2);
 		String ligne2 = reader.readLine();		
