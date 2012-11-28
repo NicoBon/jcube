@@ -24,15 +24,13 @@ public class CubeFromOneLineTextFile {
 	
 	@Test
 	public void cubeShouldBeOneFaceWithCommentSortirDuCoursPlusTot() throws IOException {
-		Cube expectedCube = (new Cube())
-				.addFace("Comment sortir du cours plus tot", "");
+		Cube expectedCube = (new Cube()).addFace("Comment sortir du cours plus tot", "");
 		assertTrue(expectedCube.equals(actualCube));	
 	}
 	
 	@Test
 	public void comparerUnXMLEtUnCube() throws Exception{
 		XMLDocument xml = actualCube.toSVG("templates/cube.svg");		
-		//XMLDocument  readCubeSVG = (new XMLDocument()).loadXMLString(xml.asXMLString());
 		assertTrue(xml.match("//tspan[contains(text(), \"Comment sortir du cours plus tot\")]"));
 	}
 }

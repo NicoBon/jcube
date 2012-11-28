@@ -13,14 +13,14 @@ public class CubeFromTwoLineTextFile {
 	public void cubeShouldBeOneFaceWithCopierAndCtrl() throws IOException {
 		this.actualCube = Cube.fromTextFile("templates/two-line-cube.txt");
 		Cube expectedCube = (new Cube()).addFace("copier", "ctrl+c");
-		assertEquals(actualCube.getUneFace(), (expectedCube.getUneFace()));
+		assertEquals(actualCube,expectedCube);
 	}
 
 	@Test
 	public void cubeShouldBeOneFaceWithUnAndDeuxAndTrois() throws IOException {
 		this.actualCube = Cube.fromTextFile("templates/three-lines-cube.txt");
 		Cube expectedCube = (new Cube()).addFace("un", "deux", "trois");
-		assertEquals(actualCube.getUneFace(), (expectedCube.getUneFace()));
+		assertEquals(actualCube, expectedCube);
 	}
 
 }

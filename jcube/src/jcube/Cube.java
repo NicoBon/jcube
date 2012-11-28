@@ -13,19 +13,9 @@ public class Cube {
 
 	public static Cube fromTextFile(String filepath) throws IOException {
 		return (new CubeTextFile(filepath)).newCube();
-		// Cube cube = new Cube();
-		// return cube.loadFromFile(filepath);
 	}
 
-	public Face getUneFace() {
-		return uneFace;
-	}
-
-	public void setUneFace(Face uneFace) {
-		this.uneFace = uneFace;
-	}
-
-	public Cube addFace(String titre) {		
+	public Cube addFace(String titre) {
 		this.uneFace = new Face(titre, "", "");
 		return this;
 	}
@@ -35,11 +25,9 @@ public class Cube {
 		return this.uneFace.equals(otherCube.uneFace);
 	}
 
-	public XMLDocument toSVG(String string) throws SAXException, IOException,
-			ParserConfigurationException, XPathExpressionException {
+	public XMLDocument toSVG(String string) throws SAXException, IOException,ParserConfigurationException, XPathExpressionException {
 		XMLDocument cubeSVG = (new XMLDocument()).loadXMLFile(string);
-		Element blocNode = cubeSVG
-				.getFirstNodeFromXPath("//tspan[contains(text(), \"$BLOCK1\")]");
+		Element blocNode = cubeSVG.getFirstNodeFromXPath("//tspan[contains(text(), \"$BLOCK1\")]");
 		blocNode.setTextContent("Comment sortir du cours plus tot");
 		return cubeSVG;
 	}
