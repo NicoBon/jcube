@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
 
+import org.junit.Test;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
@@ -31,5 +32,4 @@ public class Cube {
 		this.uneFace = new Face(titre, contenue, cheat);
 		return this;
 	}
-
 }

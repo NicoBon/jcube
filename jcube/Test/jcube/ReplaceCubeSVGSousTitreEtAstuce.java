@@ -16,11 +16,13 @@ import org.xml.sax.SAXException;
 
 public class ReplaceCubeSVGSousTitreEtAstuce {
 	private XMLDocument cubeSVG;
-
+	private XMLDocument readCubeSVG;
+			
 	@Before
 	public void createNewNoeud() throws SAXException, IOException,ParserConfigurationException, XPathExpressionException,TransformerFactoryConfigurationError, TransformerException {
 		this.cubeSVG = (new XMLDocument()).loadXMLFile("templates/cube.svg");
-
+		this.readCubeSVG = new XMLDocument();
+		
 		Element title = this.cubeSVG.createElement("tspan");
 		Element content = this.cubeSVG.createElement("tspan");
 
@@ -37,13 +39,13 @@ public class ReplaceCubeSVGSousTitreEtAstuce {
 
 	@Test
 	public void replaceNodeContentShouldBeDeux() throws SAXException,IOException, ParserConfigurationException,XPathExpressionException, TransformerFactoryConfigurationError,TransformerException {
-		XMLDocument readCubeSVG = (new XMLDocument()).loadXMLString(cubeSVG.asXMLString());
+		this.readCubeSVG.loadXMLString(cubeSVG.asXMLString());
 		assertTrue(readCubeSVG.match("//tspan[contains(text(), \"deux\")]"));
 	}
 
 	@Test
 	public void replaceNodeContentShouldBeTrois() throws SAXException,IOException, ParserConfigurationException,XPathExpressionException, TransformerFactoryConfigurationError,TransformerException {
-		XMLDocument readCubeSVG = (new XMLDocument()).loadXMLString(cubeSVG.asXMLString());
+		this.readCubeSVG.loadXMLString(cubeSVG.asXMLString());
 		assertTrue(readCubeSVG.match("//tspan[contains(text(), \"trois\")]"));
 	}
 

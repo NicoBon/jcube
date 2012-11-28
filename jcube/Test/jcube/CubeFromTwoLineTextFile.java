@@ -8,21 +8,23 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class CubeFromTwoLineTextFile {
-	private Cube actualCube;
-	private Cube expectedCube = new Cube();
-
+	private Cube expectedCube;
+	
+	@Before
+	public void createCube() {
+		this.expectedCube = new Cube();
+	}
+	
 	@Test
 	public void cubeShouldBeOneFaceWithCopierAndCtrl() throws IOException {
-		this.actualCube = Cube.fromTextFile("templates/two-line-cube.txt");
-		this.expectedCube.addFace("copier", "ctrl+c", "");
-		assertEquals(actualCube,expectedCube);
+		assertEquals(Cube.fromTextFile("templates/two-line-cube.txt"), 
+					expectedCube.addFace("copier", "ctrl+c", ""));
 	}
 
 	@Test
 	public void cubeShouldBeOneFaceWithUnAndDeuxAndTrois() throws IOException {
-		this.actualCube = Cube.fromTextFile("templates/three-lines-cube.txt");
-		this.expectedCube.addFace("un", "deux", "trois");
-		assertEquals(actualCube, expectedCube);
+		assertEquals(Cube.fromTextFile("templates/three-lines-cube.txt"), 
+					expectedCube.addFace("un", "deux", "trois"));
 	}
 
 }
